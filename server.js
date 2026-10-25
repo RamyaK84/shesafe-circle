@@ -726,9 +726,9 @@ const startServer = async () => {
     console.warn('MONGODB_URI is not configured; accounts and discussions are unavailable.')
   }
 
-  app.listen(port, () => {
-    console.log(`SheSafe Circle API listening on http://localhost:${port}`)
-  })
+  app.listen(port, '0.0.0.0', () => {
+  console.log(`SheSafe Circle API listening on port ${port}`)
+})
 }
 
 // Only auto-start when run directly (node server.js), so tests can import `app` without side effects.
